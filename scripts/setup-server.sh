@@ -30,7 +30,7 @@ sudo apt -y install nfs-common stunnel4 git binutils
 # Configure Amazon EFS in /etc/fstab
 # ==========================================
 sudo tee -a /etc/fstab > /dev/null <<EOF
-fs-0830aab8df1548209.efs.us-east-2.amazonaws.com:/ /home/ubuntu/webserver nfs4 nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport,_netdev 0 0
+fs-0627a5ebb6530a55b.efs.us-east-2.amazonaws.com:/ /home/ubuntu/webserver nfs4 nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport,_netdev 0 0
 EOF
 
 
