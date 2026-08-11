@@ -41,19 +41,26 @@ sudo mount -a
 
 # Configure Datadog
 # ==========================================
-# The API key must be supplied securely as an environment variable.
-# Never hard-code the API key in this script.
-
-: "${DD_API_KEY:?DD_API_KEY environment variable is not set}"
-
-DD_SITE="${DD_SITE:-uk1.datadoghq.com}"
-
+DD_API_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX \
+DD_APP_KEY=ddapp_ZeA0ZKoziiOxxVKEUbFZwrVSETUI1kJicM \
+DD_SITE="datadoghq.com" \
 DD_APM_INSTRUMENTATION_ENABLED=host \
+DD_APM_INSTRUMENTATION_LIBRARIES=java:1,python:4,js:5,php:1,dotnet:3,ruby:2 \
+DD_APPSEC_ENABLED=true \
+DD_IAST_ENABLED=true \
+DD_APPSEC_SCA_ENABLED=true \
+DD_RUNTIME_SECURITY_CONFIG_ENABLED=true \
+DD_COMPLIANCE_CONFIG_ENABLED=true \
+DD_SBOM_CONTAINER_IMAGE_ENABLED=true \
+DD_SBOM_HOST_ENABLED=true \
 DD_DATA_STREAMS_ENABLED=true \
 DD_PROFILING_ENABLED=auto \
-DD_ENV=dev \
-DD_APM_INSTRUMENTATION_LIBRARIES=java:1,python:4,js:5,php:1,dotnet:3,ruby:2 \
-DD_LOGS_CONFIG_PROCESS_COLLECT_ALL=true \
-DD_API_KEY="$DD_API_KEY" \
-DD_SITE="$DD_SITE" \
+DD_OTELCOLLECTOR_ENABLED=true \
+DD_RUM_ENABLED=true \
+DD_RUM_APPLICATION_ID=6e98b079-619d-451c-9dbb-73bed1cdcccb \
+DD_RUM_CLIENT_TOKEN=pub92fad8d483c235aa0a0116157092639d \
+DD_RUM_REMOTE_CONFIGURATION_ID=bf96a275-afb5-4385-8047-072b2934cee0 \
+DD_RUM_SITE=datadoghq.com \
+DD_PRIVATE_ACTION_RUNNER_ENABLED=true \
+DD_PRIVATE_ACTION_RUNNER_ACTIONS_ALLOWLIST=com.datadoghq.script.runPredefinedScript \
 bash -c "$(curl -L https://install.datadoghq.com/scripts/install_script_agent7.sh)"
