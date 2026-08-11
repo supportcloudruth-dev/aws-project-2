@@ -41,7 +41,7 @@ sudo mount -a
 
 # Configure Datadog
 # ==========================================
-DD_API_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX \
+DD_API_KEY=5e7fac4159816687ffa788854f2e315b \
 DD_APP_KEY=ddapp_ZeA0ZKoziiOxxVKEUbFZwrVSETUI1kJicM \
 DD_SITE="datadoghq.com" \
 DD_APM_INSTRUMENTATION_ENABLED=host \
